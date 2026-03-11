@@ -25,7 +25,10 @@ public class PlayerLocomotion : MonoBehaviour
         moveDirection.y = 0;
         moveDirection = moveDirection * movementSpeed;
 
+        float currentYVelocity = playerRigidbody.linearVelocity.y;
+
         Vector3 movementVelocity = moveDirection;
+        movementVelocity.y = currentYVelocity;
         playerRigidbody.linearVelocity = movementVelocity;
     }
 
