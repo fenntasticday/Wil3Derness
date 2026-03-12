@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FaeScene.unity
     guid: 0ad3b9a6979b226478709fbf49f2a414
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scene.unity
+    guid: 52ff213d4eae6354f9838e44e40dd126
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
