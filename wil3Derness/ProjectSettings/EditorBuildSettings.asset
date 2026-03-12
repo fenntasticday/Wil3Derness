@@ -5,9 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ForestScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4c9784d03344cbe44a944e82ff92b8c4
+  - enabled: 1
+    path: Assets/Scenes/ForestScene 1.unity
+    guid: 47e8b5cd2478c4e479e4142846cdc036
+  - enabled: 1
+    path: Assets/Scenes/FaeScene.unity
+    guid: 0ad3b9a6979b226478709fbf49f2a414
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

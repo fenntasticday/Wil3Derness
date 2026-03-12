@@ -324,7 +324,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _Farthest_Distance: 100
+    - _Farthest_Distance: 1300
     - _FirstShadeOverridden: 0
     - _FirstShadeVisible: 1
     - _Flatness: 1
@@ -392,7 +392,7 @@ Material:
     - _OpaqueCullMode: 2
     - _OutlineOverridden: 0
     - _OutlineVisible: 1
-    - _Outline_Width: 15
+    - _Outline_Width: 100
     - _PPDLodThreshold: 5
     - _PPDMaxSamples: 15
     - _PPDMinSamples: 5
