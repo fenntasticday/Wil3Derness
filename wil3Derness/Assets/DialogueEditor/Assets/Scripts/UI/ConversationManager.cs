@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+//using Cinemachine;
+using Unity.Cinemachine;
 
 namespace DialogueEditor
 {
@@ -38,6 +40,8 @@ namespace DialogueEditor
         public Sprite OptionImage;
         public bool OptionImageSliced;
         public bool AllowMouseInteraction;
+        public PlayerMovement playerControls;
+        public CinemachineInputAxisController cameraControl;
 
         // Non-User facing 
         // Not exposed via custom inspector
@@ -149,6 +153,13 @@ namespace DialogueEditor
             if (OnConversationStarted != null)
                 OnConversationStarted.Invoke();
 
+            if (playerControls != null)
+                playerControls.OnDisable(); // Stops input listening
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            cameraControl.enabled = false;
+
             TurnOnUI();
             m_currentSpeech = m_conversation.Root;
             SetState(eState.TransitioningDialogueBoxOn);
@@ -157,6 +168,12 @@ namespace DialogueEditor
         public void EndConversation()
         {
             SetState(eState.TransitioningDialogueOff);
+            if (playerControls != null)
+                playerControls.OnEnable(); // Re-enables input listening
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            cameraControl.enabled = true;
 
             if (OnConversationEnded != null)
                 OnConversationEnded.Invoke();

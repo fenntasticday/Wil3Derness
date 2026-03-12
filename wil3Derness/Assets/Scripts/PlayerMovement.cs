@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float verticalInput;
     public float horizontalInput;
 
-    private void OnEnable()
+    public void OnEnable()
     {
         if(playerControls == null)
         {
@@ -20,9 +20,14 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Enable();
     }
 
-    private void OnDisable()
+    public void OnDisable()
     {
         playerControls.Disable();
+
+        movementInput = Vector2.zero;
+        verticalInput = 0;
+        horizontalInput = 0;
+    
     }
 
     public void HandleAllInputs()

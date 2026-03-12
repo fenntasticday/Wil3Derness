@@ -8,8 +8,10 @@ public class PlayerLocomotion : MonoBehaviour
     Transform cameraObject;
     Rigidbody playerRigidbody;
 
+
     public float movementSpeed = 7;
     public float rotationSpeed = 15;
+    public Animator m_Animator;
 
     private void Awake()
     {
@@ -51,5 +53,15 @@ public class PlayerLocomotion : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
+        UpdateAnimator();
+    }
+
+    private void UpdateAnimator()
+    {
+        if (m_Animator == null) return;
+
+        bool isMoving = Mathf.Abs(inputManager.verticalInput) > 0.1f || Mathf.Abs(inputManager.horizontalInput) > 0.1f;
+
+        m_Animator.SetBool("isMoving", isMoving);
     }
 }
