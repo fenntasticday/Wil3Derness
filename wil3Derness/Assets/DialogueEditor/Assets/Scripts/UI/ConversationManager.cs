@@ -158,7 +158,8 @@ namespace DialogueEditor
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-            cameraControl.enabled = false;
+            if(cameraControl != null)
+                cameraControl.enabled = false;
 
             TurnOnUI();
             m_currentSpeech = m_conversation.Root;
@@ -173,7 +174,8 @@ namespace DialogueEditor
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
-            cameraControl.enabled = true;
+            if (cameraControl != null)
+                cameraControl.enabled = true;
 
             if (OnConversationEnded != null)
                 OnConversationEnded.Invoke();
